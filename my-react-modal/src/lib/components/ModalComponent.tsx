@@ -1,6 +1,7 @@
 import React from 'react';
 import './modal.css';
 import { createPortal } from 'react-dom';
+import FocusTrap from 'focus-trap-react';
 
 function Modal({ setShowModal }: any) {
   const ref = React.useRef(null);
@@ -14,14 +15,16 @@ function Modal({ setShowModal }: any) {
   };
 
   return (
-    <div className='modal-wrapper' onClick={(e) => closeModal(e as React.MouseEvent<HTMLDivElement, MouseEvent>)}>
-      <div className='modal-container' ref={ref}>
-        <h1>Modal</h1>
-        <button className='modal-btn' onClick={() => setShowModal()}>
-          Close
-        </button>
+    <FocusTrap active>
+      <div className='modal-wrapper' onClick={(e) => closeModal(e as React.MouseEvent<HTMLDivElement, MouseEvent>)}>
+        <div className='modal-container' ref={ref}>
+          <h1>Modal</h1>
+          <button className='modal-btn' onClick={() => setShowModal()}>
+            Close
+          </button>
+        </div>
       </div>
-    </div>
+    </FocusTrap>
   );
 }
 export default function ModalComponent() {
