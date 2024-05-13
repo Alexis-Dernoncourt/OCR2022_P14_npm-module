@@ -9,7 +9,6 @@ type ModalProps = {
   modalContainerClass?: string;
   children: React.ReactNode;
 };
-
 function Modal({ showModal, setShowModal, modalContainerClass, children }: ModalProps) {
   const ref = React.useRef(null);
 
