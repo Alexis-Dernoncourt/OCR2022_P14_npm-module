@@ -1,9 +1,23 @@
 {
   "name": "my-react-modal",
   "version": "1.0.0",
-  "dependencies": {
-    "web-vitals": "^2.1.4"
+  "description": "Create a react-modal component that can be published to npm",
+  "main": "dist/index.ts",
+  "module": "dist/index.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "homepage": "https://github.com/Alexis-Dernoncourt/OCR2022_P14_npm-module#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alexis-Dernoncourt/OCR2022_P14_npm-module"
   },
+  "bugs": {
+    "url": "https://github.com/Alexis-Dernoncourt/OCR2022_P14_npm-module/issues"
+  },
+  "author": "Alexis D.",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.ts,test.ts,__snapshots__",
@@ -41,16 +55,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5"
-  },
-  "main": "dist/index.ts",
-  "module": "dist/index.ts",
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Alexis-Dernoncourt/OCR2022_P14_npm-module"
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
   }
 }
