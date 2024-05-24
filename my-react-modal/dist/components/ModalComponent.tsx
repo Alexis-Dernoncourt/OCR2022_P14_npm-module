@@ -37,27 +37,44 @@ function Modal({ showModal, setShowModal, modalContainerClass, children }: Modal
     </FocusTrap>
   );
 }
-export default function ModalComponent({
-  toggleButtonText = 'Open modal',
-  toggleButtonClass = 'toggle-modal-btn',
-  modalContainerClass = 'modal-container',
-  children,
-}: {
+
+type ModalComponentProps = {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  displayToggleButton?: boolean;
   toggleButtonText?: string;
   toggleButtonClass?: string;
   modalContainerClass?: string;
   children: React.ReactNode;
-}) {
-  const [showModal, setShowModal] = React.useState(false);
+};
 
+/**
+ * Renders a modal component with possibility to show a toggle button that opens and closes the modal (showed by default).
+ */
+export default function ModalComponent({
+  showModal,
+  setShowModal,
+  displayToggleButton = true,
+  toggleButtonText = 'Open modal',
+  toggleButtonClass = 'toggle-modal-btn',
+  modalContainerClass = 'modal-container',
+  children,
+}: ModalComponentProps) {
   return (
     <>
-      <button className={toggleButtonClass} onClick={() => setShowModal(true)}>
-        {toggleButtonText}
-      </button>
+      {displayToggleButton && (
+        <button className={toggleButtonClass} onClick={() => setShowModal(true)}>
+          {toggleButtonText}
+        </button>
+      )}
       {showModal &&
         createPortal(
-          <Modal showModal={showModal} setShowModal={() => setShowModal(false)} modalContainerClass={modalContainerClass} children={children} />,
+          <Modal
+            showModal={showModal}
+            setShowModal={() => setShowModal(false)}
+            modalContainerClass={`modal-container-base ${modalContainerClass}`}
+            children={children}
+          />,
           document.body
         )}
     </>

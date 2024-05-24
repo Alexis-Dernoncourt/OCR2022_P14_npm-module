@@ -32,17 +32,21 @@
   z-index: 9998;
 }
 
-.modal-container {
+.modal-container-base {
   position: fixed;
-  min-width: 280px;
-  max-width: 70%;
-  top: 20%;
   left: 50%;
-  transform: translate(-50%, -20%);
-  background-color: teal;
-  border-radius: 10px;
+  transform: translate(-50%, 0%);
+  min-width: 280px;
   padding: 50px 20px 20px;
   z-index: 9999;
+}
+
+.modal-container {
+  min-width: 300px;
+  max-width: 70%;
+  top: 20%;
+  background-color: teal;
+  border-radius: 10px;
 }
 
 .modal-close-btn {
