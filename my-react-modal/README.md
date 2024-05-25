@@ -8,6 +8,10 @@ A React modal component created using `create-react-app` (with Typescript).
 
 # Installation
 
+Node version : 20.11.0 (see .nvmrc file)
+
+Text editor: VSCode
+
 Install with `npm i my-react-modal-ad62`
 
 <br />
@@ -22,13 +26,25 @@ import : `import { ModalComponent } from "my-react-modal-ad62"`
 type ModalComponentProps = {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-  displayToggleButton?: boolean;  -> true by default
-  toggleButtonText?: string;  -> is set to 'Open modal' by default
-  toggleButtonClass?: string;  -> has default value
-  modalContainerClass?: string;  -> has base + default value who can be overwritten
+  displayToggleButton?: boolean;
+  toggleButtonText?: string;
+  toggleButtonClass?: string;
+  modalContainerClass?: string;
   children: React.ReactNode;
 }
 ```
+
+### ModalComponentProps props description :
+
+| Prop name           |             Type              |     Default value      | Description                                                                                                                                                                                    |
+| ------------------- | :---------------------------: | :--------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| showModal           |            boolean            |         false          | The boolean state passed in component props to display the modal                                                                                                                               |
+| setShowModal        | React.SetStateAction<boolean> |           -            | The setState action passed in component props to change the boolean state                                                                                                                      |
+| displayToggleButton |            boolean            |          true          | Display a toggle modal button or not                                                                                                                                                           |
+| toggleButtonText    |            string             |      'Open modal'      | Custom text displayed into the toggle modal button                                                                                                                                             |
+| toggleButtonClass   |            string             |   'toggle-modal-btn'   | Custom css for the toggle modal button. Add a custom className will overwrite the default value.                                                                                               |
+| modalContainerClass |            string             | 'modal-container-base' | Custom css for the modal container. A default value is passed who sets : position: fixed; left: 50%; transform: translate(-50%, 0%); min-width: 280px; padding: 50px 20px 20px; z-index: 9999; |
+| children            |        React.ReactNode        |           -            | Custom nodes to display into the modal (see exemple below)                                                                                                                                     |
 
 ## Exemple :
 

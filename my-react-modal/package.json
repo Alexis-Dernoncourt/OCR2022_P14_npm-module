@@ -1,7 +1,12 @@
 {
   "name": "my-react-modal-ad62",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Create a react-modal component that can be published to npm",
+  "keywords": [
+    "react",
+    "react-modal",
+    "modal"
+  ],
   "main": "dist/index.ts",
   "module": "dist/index.ts",
   "files": [
